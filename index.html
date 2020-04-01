@@ -1,51 +1,90 @@
 <!DOCTYPE html>
 <html>
- 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 </head>
-<body>
-    <div id="main">
-        <div class="header">
-            <div id="logo">logo</div>
-            <div id="title">xxx后台管理系统</div>
-            <div id="per-mes">您好，admin。欢迎您使用后台管理系统！ </div>
-        </div>
-        <div class="sidebar">
-            <ul class="nav nav-stacked">
-                <li role="presentation" class="active">
-                    <a href="#" data-toggle="collapse" data-target="#list">test</a>
-                    <ul id="list" class="collapse in">
-                        <li class="active"><a href="">test - 1</a></li>
-                        <li><a href="">test - 2</a></li>
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <header class="main-header">
+            <a href="#" class="logo">
+                <span class="logo-lg">农场品管理系统</span>
+            </a>
+            <nav class="navbar navbar-static-top" role="navigation">
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="img/1.jpg" class="user-image" alt="User Image">
+                                <span class="hidden-xs">Admin</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                        </li>
                     </ul>
-                </li>
-                <li role="presentation"><a href="#" data-toggle="collapse" data-target="#list1">Test</a>
-                <ul id="list1" class="collapse in">
-                    <li class="active"><a href="">Test - 1</a>
+                </div>
+            </nav>
+        </header>
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <ul class="sidebar-menu" data-widget="tree">
+                    <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
+                    <li class="treeview">
+                        <a href="#"><i class="fa fa-link"></i><span>Link2</span>
+                        <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="#" class="myLeftMenu" data="#">Link3</a></li>
+                            <li><a href="#" class="myLeftMenu" data="#">Link4</a></li>
+                            <li><a href="#" class="myLeftMenu" data="#">Link5</a></li>
+                        </ul>
                     </li>
-                    <li><a href="">Test - 2</a></li>
-                    </ul>
-                    </li>
-                <li role="presentation"><a href="#">Tested</a></li>
-            </ul>
-        </div>
-        <div class="right-content">
-            <div style="margin:10px;">
+                </ul>
+            </section>
+        </aside>
+        <div class="content-wrapper">
+            <section class="content-header">
+                <h1>Page Header<small>Optional description</small></h1>
                 <ol class="breadcrumb">
-                    <li><a href="#">Test1</a></li>
-                    <li><a href="#">Test2</a></li>
-                    <li class="active">Test3</li>
+                    <li><a href="#">Level</a></li>
+                    <li class="active">Here</li>
                 </ol>
-            这里是内容
-            </div>
+            </section>
+            <section class="content container-fluid">
+                <div id="container">
+                    内容
+                </div>
+            </section>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/admin.js"></script>
+    <script>
+        $(function () {
+            $('ul.sidebar-menu li').click(function () {
+                var li = $('ul.sidebar-menu li.active');
+                li.removeClass('active');
+                $(this).addClass('active');
+            });
+
+            $('.myLeftMenu').click(function (e) {
+
+                var url = $(this).attr('data');
+            //  console.log(url);
+                $('#container').load(url);
+            });
+        })
+    </script>
 </body>
 </html>
