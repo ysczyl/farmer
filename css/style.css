@@ -1,0 +1,60 @@
+html,body{
+    width:100%;
+    height:100%;
+    margin:0px;
+}
+#main{
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction:row;
+    justify-content: start;
+}
+.header{
+    width: 100%;
+    height: 10%;
+    background: #0099CC;
+    display:flex;
+    flex-wrap: no-wrap;
+    justify-content:center;
+}
+.sidebar{
+    width:12%;
+    height: 90%;
+    background:yellow;
+}
+.right-content{
+    width: 88%;
+    height:90%;
+}
+#logo{
+    width:10%;
+    height:100%;
+    line-height:80px;
+}
+#title{
+    width:50%;
+    font-size: 28px;
+    text-align:center;
+    line-height: 80px;
+}
+#per-mes{
+    width:20%;
+    height:100%;
+    line-height: 80px;
+}
+li{
+    list-style:none;
+}
+
+a{
+    text-decoration: none;
+}
+a:focus, a:hover {
+color: #23527c;
+text-decoration: none;
+}
+li:hover{
+    list-style:none;
+}
